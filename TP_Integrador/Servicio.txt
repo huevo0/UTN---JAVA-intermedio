@@ -1,0 +1,6 @@
+Windows,Sistema Operativo
+MacOS,Sistema Operativo
+Linux,Sistema Operativo
+Ubuntu,Sistema Operativo
+SAP,Aplicacion
+Tango,Aplicacion

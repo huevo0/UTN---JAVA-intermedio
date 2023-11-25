@@ -1,0 +1,6 @@
+Juan Perez,15256478215,juanperez@email.com,1213141516,Windows
+Laura Garcia,24216554874,lauragacia@email.com,1516655448,MacOS
+Jose Paez,26654565578,josepaez@email.com,1615141212,Linux
+Maria Diaz,21242626548,mariadiaz@email.com,1412134845,Ubuntu
+Ramon Cano,41233564587,ramoncano@email.com,1654879852,SAP
+Andrea Mas,20226548796,andreamas@email.com,1723654897,Tango

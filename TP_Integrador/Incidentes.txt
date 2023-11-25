@@ -1,0 +1,7 @@
+Juan Perez,Windows,no inicia,Marcos,pendiente,20-11-2023,22-11-2023
+Laura Garcia,MacOS,no se apaga,Daniel,resuelto,20-11-2023,22-11-2023
+Jose Paez,Linux,falla al ejecutar tareas,Sergio,en proceso,21-11-2023,22-11-2023
+Maria Diaz,Ubuntu,no responde,Orlando,pendiente,21-11-2023,22-11-2023
+Ramon Cano,SAP,emite un error,Martin,resuelto,22-11-2023,23-11-2023
+Andrea Mas,Tango,no guarda la informacion,Franco,en proceso,22-11-2023,23-11-2023
+Jose Paez,Windows,esta muy lento,Diego,pendiente,22-11-2023,23-11-2023
