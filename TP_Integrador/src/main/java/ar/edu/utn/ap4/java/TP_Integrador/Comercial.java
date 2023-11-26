@@ -9,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.lang.AutoCloseable;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -68,7 +69,7 @@ public class Comercial {
         }
     }
 
-    public static List<Cliente> clientesBD() {
+    public static List<Cliente> clientesBD () {
         List<Cliente> clientes = new ArrayList<>();
         System.out.println("\n====================================== Clientes DE LA BD ======================================\n");
         try (ConexionBD conectar = new ConexionBD(); Connection con = conectar.Conectar("Configuracion.txt")) {

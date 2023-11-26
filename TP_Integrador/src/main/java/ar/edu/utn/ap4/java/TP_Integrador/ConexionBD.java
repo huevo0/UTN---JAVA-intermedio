@@ -26,9 +26,9 @@ public class ConexionBD implements AutoCloseable{
     private Connection con;
 
         
-    public Connection Conectar(String filePath) {
+    public Connection Conectar(String archivo) {
     	Properties configuracion = new Properties();
-    	 try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+    	 try (BufferedReader reader = new BufferedReader(new FileReader(archivo))) {
              String line;
              while ((line = reader.readLine()) != null) {
                  String[] parts = line.split("=");
@@ -43,14 +43,6 @@ public class ConexionBD implements AutoCloseable{
          } catch (IOException e) {
              System.err.println("Error al cargar la configuración: " + e.getMessage());
          }
-
-         
-         bd = configuracion.getProperty("bd");
-         url = configuracion.getProperty("url");
-         user = configuracion.getProperty("user");
-         password = configuracion.getProperty("password");
-         driver = configuracion.getProperty("driver");
-
         try {
             Class.forName(configuracion.getProperty("driver"));
             con = DriverManager.getConnection(

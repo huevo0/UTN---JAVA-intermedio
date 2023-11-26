@@ -9,7 +9,7 @@ import java.util.List;
 
 public class main {
 
-	public static void main(String[] args) throws FileNotFoundException, SQLException, ParseException {
+	public static void main(String[] args) {
 		
 		List<Tecnico>tecnicos = new ArrayList<Tecnico>();
 		tecnicos = RRHH.importarTecnicosCSV();
