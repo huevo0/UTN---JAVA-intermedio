@@ -11,13 +11,17 @@ public class main {
 
 	public static void main(String[] args) {
 		
+/*******	CARGA DEDESDE EL ARCHIVO LOS TECNICOS A LA BASE DE DATOS	********/
+		
 		List<Tecnico>tecnicos = new ArrayList<Tecnico>();
 		tecnicos = RRHH.importarTecnicosCSV();
 		ConexionBD conectaBD = new ConexionBD();
 		conectaBD.Conectar("Configuracion.txt");
 		RRHH.altaTecnicos(tecnicos);
 		RRHH.tecnicosBD();
-		
+
+/*******	CARGA DEDESDE EL ARCHIVO LOS LOS CLIENTES A LA BASE DE DATOS	********/
+
 		List<Cliente>clientes = new ArrayList<Cliente>();
 		clientes=Comercial.importarClientesCSV();
 		ConexionBD conectaBD1 = new ConexionBD();
@@ -25,6 +29,7 @@ public class main {
 		Comercial.altaCliente(clientes);
 		Comercial.clientesBD();
 	
+/*******	CARGA DEDESDE EL ARCHIVO LOS LOS INCIDENTES A LA BASE DE DATOS	********/
 		
 		List<Incidente>incidentes = new ArrayList<Incidente>();
 		incidentes=MesaDeAyuda.importarIncidentesCSV();
@@ -33,6 +38,8 @@ public class main {
 		MesaDeAyuda.altaIncidentes(incidentes);
 		MesaDeAyuda.incidentesBD();
 		
+/*******	DESDE LA BASE DE DATOS EXTRAIGO EL TECNICO CON MAS INCIDENTES EN LOS ULTIMOS N DIAS	********/
+
 		LocalDate fechaInicio = LocalDate.now(); 
         int ultimosNDias = 30; 
         Resultados tecnico = new Resultados();
@@ -44,6 +51,7 @@ public class main {
         } else {
             System.out.println("No se encontraron resultados.");
         }
+/*******	DESDE LA BASE DE DATOS EXTRAIGO EL TECNICO CON MAS INCIDENTES EN LOS ULTIMOS N DIAS DE UNA ESPECIALIDAD	********/
         
         Resultados tecnico2 = new Resultados();
         String tecEsp;
@@ -54,7 +62,9 @@ public class main {
         } else {
             System.out.println("No se encontraron resultados.");
         }
-        
+   
+/*******	DESDE LA BASE DE DATOS EXTRAIGO EL TECNICO MAS RAPIDO	********/
+
         Resultados tecnico3 = new Resultados();
         String tecnRapido = tecnico3.tecnicoMasRapido();
         System.out.println("\n=================================================================================================\n");

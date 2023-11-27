@@ -24,6 +24,8 @@ public class RRHH {
         List<Tecnico> tecnicos = new ArrayList<>();
         String filePath = "Tecnicos.txt";
 
+/*******	SE LEE EL CONTENIDO DEL ARCHIVO TECNICOS Y SE CARGA EN UN STRING[] 	********/
+        
         try (Scanner scanner = new Scanner(new File(filePath))) {
             while (scanner.hasNextLine()) {
                 String[] datos = scanner.nextLine().split(",");
@@ -45,6 +47,7 @@ public class RRHH {
 
         return tecnicos;
     }
+ /*******	SE CARGAN LOS DATO EN LA BD DE MySQL 	********/
 
     public static void altaTecnicos(List<Tecnico> tecnicos) {
         try (ConexionBD conectar = new ConexionBD(); Connection con = conectar.Conectar("Configuracion.txt")) {
@@ -62,6 +65,8 @@ public class RRHH {
         }
     }
 
+/*******	SE CONSULTA LA TABLA TECNCOS BD DE MySQL YU SE MUESTRA POR PANTALLA 	********/
+    
     public static List<Tecnico> tecnicosBD() {
         List<Tecnico> tecnicos = new ArrayList<>();
         System.out.println("\n========================== Tecnicos DE LA BD ==========================\n");

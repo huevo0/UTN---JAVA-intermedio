@@ -18,6 +18,9 @@ import lombok.NoArgsConstructor;
 
 public class Resultados {
 	
+	
+/*******	METODO QUE ME DEVUELVE EL NOMBRE DEL TECNICO CON MAS INCIDENTES RESUELTOS 	********/	
+	
 	public static String tecnicoMasIncidentes(LocalDate fechaInicio, int ultimosNDias) {
 	        String query = "SELECT tecnico, COUNT(*) AS cantidad FROM Incidente " +
 	                       "WHERE estado = 'Resuelto' AND fecha_resolucion >= ? " +
@@ -46,7 +49,9 @@ public class Resultados {
 			}
 	        return null;
 	    }
-		
+
+	/*******	METODO QUE ME DEVUELVE EL TECNICO DE LA ESPECILIDAD ESPECIFICA CON MAS INCIDENTES RESUELTOS 	********/	
+	
 	public static String tecnicoEspecialidadMasIncidentes(LocalDate fechaInicio, int ultimosNDias) {
         String query = "SELECT tecnico, COUNT(*) AS cantidad FROM Incidente " +
                        "WHERE estado = 'Resuelto' AND servicios = 'SAP' AND fecha_resolucion >= ? " +
@@ -75,7 +80,9 @@ public class Resultados {
 		}
         return null;
     }
-	    
+
+	/*******	METODO QUE ME DEVUELVE EL NOMBRE DEL TECNICO MAS RAPIDO 	********/	
+	
 	public static String tecnicoMasRapido() {
         String query = "SELECT tecnico, AVG(DATEDIFF(fecha_resolucion, fecha_alta)) AS promedio_resolucion " +
                        "FROM Incidente " +

@@ -27,7 +27,7 @@ public class MesaDeAyuda {
     private List<Incidente> incidentes;
 
     
-   
+    /*******	SE LEE EL CONTENIDO DEL ARCHIVO INCIDENTES Y SE CARGA EN UN STRING[] 	********/   
 
     public static List<Incidente> importarIncidentesCSV() {
         List<Incidente> incidentes = new ArrayList<>();
@@ -57,7 +57,8 @@ public class MesaDeAyuda {
         }
         return incidentes;
     }
-
+    /*******	SE CARGA LA BASE DE DATOS EN MySQL 	********/
+    
     public static void altaIncidentes(List<Incidente> incidentes) {
         try ( ConexionBD conectar = new ConexionBD(); 
         		Connection con = conectar.Conectar("Configuracion.txt")) {
@@ -82,6 +83,8 @@ public class MesaDeAyuda {
         }
     }
 
+    /*******	SE MUESTRA LA TABLA INCIDENTES DESDE MySQL 	********/
+    
     public static List<Incidente> incidentesBD() {
         List<Incidente> incidentes = new ArrayList<>();
         System.out.println("\n==================================================== Incidentes DE LA BD ====================================================\n");

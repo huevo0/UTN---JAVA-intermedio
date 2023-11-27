@@ -25,6 +25,8 @@ public class Comercial {
 
         String filePath = "Clientes.txt";
 
+        /*******	SE LEE EL ARCHIVO CLIENTE Y SE CARGA EN UN STRING[] 	********/
+        
         try (Scanner scanner = new Scanner(new File(filePath))) {
             while (scanner.hasNextLine()) {
                 String[] datos = scanner.nextLine().split(",");
@@ -50,6 +52,8 @@ public class Comercial {
         return clientes;
     }
 
+    /*******	SE CARGA LOS DATOS EN LA TABLA CLIENTES EN LA BD MySQL 	********/
+    
     public static void altaCliente(List<Cliente> clientes) {
         try (ConexionBD conectar = new ConexionBD(); Connection con = conectar.Conectar("Configuracion.txt")) {
             String query = "INSERT INTO Cliente (Razon_Social, Cuit, E_mail, Telefono, Servicios) VALUES (?, ?, ?, ?, ?)";
@@ -69,6 +73,9 @@ public class Comercial {
         }
     }
 
+    /*******	SE MUESTRAN LOS CLIENTES DE LA BD MySQL 	********/
+
+    
     public static List<Cliente> clientesBD () {
         List<Cliente> clientes = new ArrayList<>();
         System.out.println("\n====================================== Clientes DE LA BD ======================================\n");
